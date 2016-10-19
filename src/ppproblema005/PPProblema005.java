@@ -16,15 +16,23 @@ public class PPProblema005 {
      */
     public static void main(String[] args) {
         
-        System.out.println("Introduce un Número");
-        Scanner entradaEscanner = new Scanner(System.in);
-         int n;
-         n=entradaEscanner.nextInt(); 
-          if((n % 1 == 0) && (n % n == 0) ){
-            System.out.println("El número:"+ n +"ES Primo");  
-       }else{
-            System.out.println("El número:"+ n +"NO es Primo");
-           }
-    }
-    
+        int n;
+        do{
+            System.out.println("Introduce un número");
+            Scanner entrada= new Scanner(System.in);
+            n=Integer.parseInt(entrada.nextLine());
+            boolean primo=true;
+            
+            for(int i=2; i<n && primo==true; i++){
+                if(n % 1==0) primo=false;
+                
+            }
+            if(primo==true)
+                System.out.println("El número" + n + "es primo");
+            else
+                System.out.println("El número" + n + "NO es primo");
+        }while (n>0);
+       
+    }  
 }
+
